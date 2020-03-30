@@ -1,0 +1,62 @@
+
+
+ /* ARTURO BORBOLLA GALVAN 
+	MATRICULA : A01701833 */
+/* P05  Reverse a list 
+
+ List ( 1 2 3 4 5). 
+
+
+funcion reverse ( lista acc )  ** el acumulador es una lista. vacia.
+	if head of list is empty
+		return acc 
+	else 
+		reverse( tail of list, append head to acc) */
+
+
+/* P31 ALGORITH 
+ * funcion prime ( numero )
+ *  desde i == 2 hasta i < n/2
+ * checar si n es divisible entre i 
+ *  si es, cambiar bandera y salir
+ *  si no es, al final dejar la bandera como 0 significa que si es primo. 
+ * */
+
+fun main() {
+
+/* P05 (*) Reverse a list. */
+	val list = mutableListOf(0, 1, 2, 3, 4, 5)
+    val list1 = mutableListOf(0, 2, 4, 6, 6, 7)
+    
+    val program_example = listOf(1, 1, 2, 3, 5, 8)
+	val inverted= list.asReversed()
+    val inverted1= list1.asReversed()
+    val program_inverted = program_example.asReversed()
+println("Lista Original: $list")
+	println("Invertida: $inverted")
+println("Lista Original: $list1")
+	println("Invertida: $inverted1")
+println("Lista Original del Problema a probar : $program_example")
+	println("Invertida: $program_inverted")
+/* P31 (*) Determine whether a given integer number is prime.*/
+	prime(3)
+	prime(10)
+    // del problema 
+    prime(7)
+}
+
+
+fun prime(num: Int) {
+    var flag = false
+    for (i in 2..num / 2) {
+        if (num % i == 0) {
+            flag = true
+            break
+        }
+    }
+
+    if (!flag)
+        println("$num es un numero primo.")
+    else
+        println("$num no es un numero primo.")
+}
